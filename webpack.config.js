@@ -14,12 +14,13 @@ const jsLodaers = () => {
     loader: 'babel-loader',
     options: {
       presets: ['@babel/preset-env'],
+      plugins: ['@babel/plugin-proposal-class-properties'],
     },
   },
   ]
 
   if (isDev) {
-    loaders.plush('eslint-lodaer')
+    loaders.push('eslint-loader')
   }
 
   return loaders

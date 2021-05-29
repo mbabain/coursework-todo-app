@@ -1,0 +1,11 @@
+@mixin animate($style) {
+  transition: $style 0.1s ease-out;
+}
+
+@mixin circle() {
+  min-width: 20px;
+  min-height: 20px;
+  border-radius: 50%;
+  border: 2px solid $list-item-apply-color;
+  cursor: pointer;
+}

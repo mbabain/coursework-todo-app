@@ -14,12 +14,13 @@ const jsLodaers = () => {
     loader: 'babel-loader',
     options: {
       presets: ['@babel/preset-env'],
+      plugins: ['@babel/plugin-proposal-class-properties'],
     },
   },
   ]
 
   if (isDev) {
-    loaders.plush('eslint-lodaer')
+    loaders.push('eslint-loader')
   }
 
   return loaders
@@ -40,7 +41,7 @@ module.exports = {
       '@core': path.resolve(__dirname, 'src/core'),
     },
   },
-  devtool: isDev ? 'source-map' : null,
+  devtool: isDev ? 'source-map' : false,
   devServer: {
     port: 3000,
     hot: isDev,

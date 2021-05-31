@@ -1,0 +1,103 @@
+@import 'variables';
+@import 'mixins';
+
+.toolbar {
+  min-width: $toolbar-width;
+  padding: 0 14px;
+  border-left: 1px solid $borders-color;
+  background-color: $toolbar-color;
+
+  & > * {
+    margin-bottom: 14px;
+  }
+
+  &_header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: $todo-header-height;
+    margin-left: -14px;
+    margin-right: -14px;
+    padding: 0 14px;
+    border-bottom: 1px solid $borders-color;
+  }
+
+  &_icon {
+    &-delete {
+      padding: 4px;
+      margin-right: 8px;
+      cursor: pointer;
+
+      .delete {
+        width: 18px;
+        height: 18px;
+      }
+
+      &:hover {
+        fill: $red-color;
+      }
+    }
+
+    &-list, &-calendar {
+      width: 20px;
+      height: 20px;
+    }
+    &-arrow {
+      width: 26px;
+      height: 26px;
+    }
+  }
+
+  input, textarea, select {
+    width: 100%;
+    padding: 8px;
+    outline: none;
+    border: none;
+    background-color: $gray-color;
+  }
+
+  textarea {
+    height: 160px;
+    resize: none;
+  }
+
+  &_title {
+    font-size: 20px;
+  }
+
+  &_line {
+    display: flex;
+    align-items: center;
+
+    .icon {
+      display: flex;
+      align-items: center;
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  #toolbar_select {
+    width: 100%;
+    font-size: 16px;
+    border: 0;
+    border-radius: 2px;
+    outline: none;
+  }
+
+  &_subtasks {
+    .toolbar_subtask + .toolbar_subtask {
+      margin-top: 14px;
+    }
+  }
+
+  &_subtask {
+    display: flex;
+    align-items: center;
+    padding-left: 40px;
+
+    &-check {
+      @include circle;
+    }
+  }
+}

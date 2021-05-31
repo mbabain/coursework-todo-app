@@ -1,5 +1,41 @@
-$red: green;
+@import "~normalize.css";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,700&display=swap');
+@import "menu";
+@import "list";
+@import "toolbar";
+@import "popup";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box
+  ;
+}
 
 body {
-  background-color: $red;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+}
+
+#app, .todo, body, html {
+  height: 100%;
+}
+
+.todo {
+  position: relative;
+  display: flex;
+  flex: 1 1 0;
+}
+
+input, textarea {
+  border-radius: 2px;
+  &:focus {
+    outline: 0;
+    background-color: $todo-selected-color;
+    @include animate(background-color);
+    
+    &::placeholder {
+      opacity: 0;
+    }
+  }
 }

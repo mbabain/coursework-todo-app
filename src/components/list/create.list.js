@@ -51,8 +51,8 @@ function toTask(id, title, description, isActive) {
   const active = isActive ? 'active' : ''
   return `
     <div class="list_item ${active}" data-task="true" data-id="${id}">
-      <div class="list_item__apply" data-button-complete="true"
-      ></div>
+      <div class="list_item__apply" data-button-complete="true">
+      </div>
       <div class="list_item__inner">
         <span class="list_item__title" data-task="true">
           ${title}

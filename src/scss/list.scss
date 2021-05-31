@@ -33,6 +33,12 @@
     .list_item + .list_item {
       margin-top: 4px;
     }
+
+    &--completed {
+      .list_item__apply {
+        background-color: $list-item-apply-color;
+      }
+    }
   }
 
   .list_item {

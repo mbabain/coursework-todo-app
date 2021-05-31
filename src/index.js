@@ -1,8 +1,6 @@
 import {Todo} from '@/components/todo/Todo'
 import {List} from '@/components/list/List';
-import {Menu} from '@/components/menu/Menu';
 import {Toolbar} from '@/components/toolbar/Toolbar';
-import {Popup} from '@/components/popups/Popup';
 import {createStore} from '@core/createStore';
 import {rootReducer} from '@/redux/rootReducer';
 import {storage} from '@core/utils';
@@ -16,7 +14,7 @@ store.subscribe(state => {
 })
 
 const todo = new Todo('#app', {
-  components: [Popup, Menu, List, Toolbar],
+  components: [List, Toolbar],
   store,
 })
 
